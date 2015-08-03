@@ -64,3 +64,9 @@ Like attributes
 
 - article_id
   
+# Mockups
+Index of all articles (colored bars correspond to length of content):
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/index-view.png)
+
+Article show page: 
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/article-show-page.png)
