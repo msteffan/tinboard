@@ -1,28 +1,14 @@
-== README
+# Tinboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
 
-Things you may want to cover:
+# User Stories
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. As a user, I want to create an account on Tinboard.
+2. As a user, I want to log in and out of my account on Tinboard so that I can end my session when I'm done reading.
+3. As a user, I want to be able to update my account information.
+4. As a user, I want to be able to delete my account if I don't find Tinboard valuable (but that won't happen!)
+5. As a user, I want to see a list or index previews of content based on my time selection, so that I can pick a topic/story that interests me.
+6. As a user, I want to click on an article to load the entire article, so that I can read it.
+7. As a user, I want the option to add stories to my profile's "reading list," so that I can save them and finish reading later.
+8. As a user, I want to be able to remove stories from my "reading list" after I have read them. 
