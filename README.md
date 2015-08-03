@@ -13,3 +13,5 @@ Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard
 7. As a user, I want the option to add stories to my profile's "reading list," so that I can save them and finish reading later.
 8. As a user, I want to be able to remove stories from my "reading list" after I have read them. 
 
+# ERD
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/tinboard_erd.JPG)
