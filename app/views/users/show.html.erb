@@ -9,34 +9,20 @@
 </div> <!-- navBar -->
 
 
+
 <div class="contentWrapper">
-  <div class="row contentSection">
-    <div class="one-third column">
-      <h1 class="storyHeadline leastRead"><a href="sampleArticle.html" class="hrefLink">Extra Extra! Read All About It.</a></h1>
-      <p>New York Times</p>
-      <p class="storyPreview">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas purus mauris, sit amet facilisis enim hendrerit ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ac purus vel tortor tempor convallis. Donec at ultrices magna. Suspendisse nec nisl mauris. Curabitur molestie pellentesque congue. Cras ultricies, turpis vitae posuere congue, odio sem bibendum odio, et rutrum nulla purus vitae purus.
-      </p>
-      <button class="readMore">Read More</button>
-    </div>
+    <div class="row contentSection">
+        <% @user.likes.each do |like| %>
+            <!-- <div class="one-third column"> -->
+                <h1 class="storyHeadline leastRead"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
+                <p><%= like.article.author %>, <%= like.article.publication %></p>
+                <p class="storyPreview"><%= truncate(like.article.fulltext, :length => 500 )%></p>
+                <button class="readMore"><%= link_to "Read More", article_path(like.article)%></button>
 
-    <div class="one-third column">
-      <h1 class="storyHeadline tenMinutes">Headline</h1>
-      <p>Twitter</p>
-      <p class="storyPreview">
-        Ut a nunc maximus, mollis arcu sit amet, consequat nisl. Morbi vitae nulla urna. In et est at dolor pharetra tristique sit amet sed massa. In vel dui porttitor, vulputate est et, tincidunt sapien. Phasellus condimentum neque sem, ut eleifend leo ultricies nec. Nullam convallis lacinia velit eget blandit. Pellentesque pulvinar dolor arcu, id vehicula lorem luctus eget. Suspendisse at gravida mauris.
 
-        Cras non sapien pellentesque, feugiat odio sed, ornare ante. Vivamus mauris nulla, ullamcorper et sem vel, porttitor venenatis sapien. Integer volutpat, risus quis laoreet lobortis, leo arcu aliquet nisi, eget sodales tellus metus eu elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam at libero sodales lacinia. Curabitur at justo purus. Nam convallis ornare leo ac dictum. Ut hendrerit est id sapien porta, et viverra quam faucibus.
-      </p>
-      <button class="readMore">Read More</button>
-    </div>
-
-    <div class="one-third column">
-      <h1 class="storyHeadline oneMinute">Story</h1>
-      <p>Washington Post</p>
-      <p class="storyPreview">
-        Cras non sapien pellentesque, feugiat odio sed, ornare ante. Vivamus mauris nulla, ullamcorper et sem vel, porttitor venenatis sapien. Integer volutpat, risus quis laoreet lobortis, leo arcu aliquet nisi, eget sodales tellus metus eu elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam at libero sodales lacinia. Curabitur at justo purus. Nam convallis ornare leo ac dictum. Ut hendrerit est id sapien porta, et viverra quam faucibus.
-      </p>
-      <button class="readMore">Read More</button>
-    </div>
-</div>
+            <!-- </div> -->
+        <% end %>
+    </div> <!-- End contentSection -->
+</div> <!-- End contentWrapper -->
+<!-- </div>  -->
+<!-- End Containter -->

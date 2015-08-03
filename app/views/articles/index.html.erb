@@ -16,17 +16,14 @@
 
 
 <div class="contentWrapper">
-<%# @counter = 1 %>
-<%# if @counter == 1 || @counter == 4 %>
     <div class="row contentSection">
         <% @articles.each do |article| %>
             <div class="one-third column">
                 <h1 class="storyHeadline leastRead"><%= link_to "#{article.title}", article_path(article), {:class => "hrefLink"} %></h1>
-                <p><%= article.publication %></p>
+                <p><%= article.author %>, <%= article.publication %></p>
                 <p class="storyPreview"><%= truncate(article.fulltext, :length => 500 )%></p>
                 <button class="readMore">Read More</button>
             </div>
-        <%# @counter = @counter + 1 %>
         <% end %>
     </div> <!-- End contentSection -->
 </div> <!-- End contentWrapper -->

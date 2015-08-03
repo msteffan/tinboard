@@ -9,10 +9,7 @@
       </div> <!-- end .wrapper -->
     </div><!--  End .progress -->
 
-<!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
- <!-- headlineLogo -->
-  <!-- <div class="container"> -->
+<!-- Primary Page Layout -->
 
 <!-- navBar -->
 <div class="row" id="navBar">
@@ -28,26 +25,19 @@
 <div class="tracker">
     <div class="row" id="articleView">
         <h1 class="leastRead"><%= @article.title %></h1>
+        <!-- <button class="readMore"><%= link_to "Save for Later", likes_path%></button> -->
+        <%= render "form" %>
+        <p><%= @article.author %>, <%= @article.publication%></p>
         <!-- article container -->
         <div class="articleContent">
             <div class="two-thirds column">
-                <p>
-                    <%= @article.fulltext %>
-                </p>
+                <p><%= @article.fulltext %></p>
             </div> <!-- End Two-Thirds Column -->
         </div> <!-- End Article Content -->
     </div><!--  End article view -->
 </div> <!-- end tracker -->
 
 
- <div class="footer">
-    A well informed electorate is a prerequisite for democracy. - Thomas Jefferson
+<div class="footer">
+<!-- FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jefferson -->
 </div>
-<!--
-
-
-<script type="text/javascript">
-$(function(){
-      $("#demo-bar").load("../demo-bar.html");
-    });
-</script> -->

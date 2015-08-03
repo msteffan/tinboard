@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
    # get '/pins', to: 'pins#index'
    # post '/pins', to: 'pins#create'
-
+   get '/likes', to: 'likes#create'
+   # post '/likes', to: 'likes#create'
 
    get '/sign_in', to: 'users#sign_in'
    post '/sign_in', to: 'users#sign_in!'
