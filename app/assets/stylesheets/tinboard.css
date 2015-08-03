@@ -52,16 +52,6 @@ color:black;
 	margin-bottom: 5%;
 }
 
-#oneMinute {
-
-	border-bottom: 5px solid #333333;
-}
-
-#oneMinute:hover {
-
-	border-bottom: 5px solid #00FFF2;
-}
-
 #twoMinutes {
 
 	border-bottom: 5px solid #333333;
@@ -69,8 +59,29 @@ color:black;
 
 #twoMinutes:hover {
 
+	border-bottom: 5px solid #00FFF2;
+}
+
+#fourMinutes {
+
+	border-bottom: 5px solid #333333;
+}
+
+#fourMinutes:hover {
+
 	border-bottom: 5px solid #FFFF00;
 }
+
+#sixMinutes {
+
+	border-bottom: 5px solid #333333;
+}
+
+#sixMinutes:hover {
+
+	border-bottom: 5px solid #CD00FF;
+}
+
 
 #tenMinutes {
 
@@ -79,9 +90,8 @@ color:black;
 
 #tenMinutes:hover {
 
-	border-bottom: 5px solid #CD00FF;
+	border-bottom: 5px solid #00FF00;
 }
-
 
 #mostRead {
 
@@ -89,16 +99,6 @@ color:black;
 }
 
 #mostRead:hover {
-
-	border-bottom: 5px solid #00FF00;
-}
-
-#leastRead {
-
-	border-bottom: 5px solid #333333;
-}
-
-#leastRead:hover {
 
 	border-bottom: 5px solid #FF007A;
 }
@@ -110,7 +110,7 @@ color:black;
 
 }
 
-.oneMinute {
+.twoMinutes {
 	border-bottom: 5px solid #00FFF2;
 }
 .oneMinuteSubline {
@@ -119,54 +119,54 @@ color:black;
 	width:25%;
 }
 
-.oneMinute:hover {
+.twoMinutes:hover {
 
 	/*border-bottom: 5px solid #00FFF2;*/
 }
 
-.twoMinutes {
+.fourMinutes {
 
 	border-bottom: 5px solid #FFFF00;
 }
 
-.twoMinutes:hover {
+.fourMinutes:hover {
 
 	/*border-bottom: 5px solid #FFFF00;*/
 }
 
-.tenMinutes {
+.sixMinutes {
 
 	border-bottom: 5px solid #CD00FF;
 }
 
-.tenMinutes:hover {
+.sixMinutes:hover {
 
 	/*border-bottom: 5px solid #CD00FF;*/
 }
 
 
-.mostRead {
+.tenMinutes {
 
 	border-bottom: 5px solid #00FF00;
 }
 
-.mostRead:hover {
+.tenMinutes:hover {
 
 	/*border-bottom: 5px solid #00FF00;*/
 }
 
-.leastRead {
+.mostRead {
 
 	border-bottom: 5px solid #FF007A;
 }
 
-.leastReadSubline {
+.mostReadSubline {
 
 	border-bottom: 5px solid #FF007A;
 	width:25%;
 }
 
-.leastRead:hover {
+.mostRead:hover {
 
 	/*border-bottom: 5px solid #FF007A;*/
 }

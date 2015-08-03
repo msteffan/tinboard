@@ -3,23 +3,37 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-
-
-
+<!-- navBar -->
 <div class="row" id="navBar">
-   <div class="two columns" id="oneMinute"><a href="oneMinute.html" class="hrefLink">1 Minute</a></div>
-    <div class="two columns" id="twoMinutes"><a href="twoMinutes.html" class="hrefLink">Two Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><a href="tenMinutes.html" class="hrefLink">10 Minutes</a></div>
-    <div class="two columns" id="mostRead"><a href="mostRead.html" class="hrefLink">Most Read</a></div>
-    <div class="two columns" id="leastRead"><a href="leastRead.html" class="hrefLink">Least read</a></div>
-</div> <!-- navBar -->
+   <div class="two columns" id="twoMinutes">
+       <a href="oneMinute.html" class="hrefLink">2 Minutes</a>
+   </div>
+    <div class="two columns" id="fourMinutes"><a href="twoMinutes.html" class="hrefLink">4 Minutes</a></div>
+    <div class="two columns" id="sixMinutes"><a href="tenMinutes.html" class="hrefLink">6 Minutes</a></div>
+    <div class="two columns" id="tenMinutes"><a href="mostRead.html" class="hrefLink">10 Minutes</a></div>
+    <div class="two columns" id="mostRead"><a href="leastRead.html" class="hrefLink">Most Read</a></div>
+</div>
 
 
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @articles.each do |article| %>
+            <% if article.length <= 400 %>
+                <% @class = "twoMinutes" %>
+            <% end %>
+            <% if article.length > 400 && article.length <= 800 %>
+                <% @class = "fourMinutes" %>
+            <% end %>
+            <% if article.length > 800 && article.length <= 1200 %>
+                <% @class = "sixMinutes" %>
+            <% end %>
+            <% if article.length >= 1200 %>
+                <% @class = "tenMinutes" %>
+            <% end %>
             <div class="one-third column">
-                <h1 class="storyHeadline leastRead"><%= link_to "#{article.title}", article_path(article), {:class => "hrefLink"} %></h1>
+                <h1 class="storyHeadline <%= @class %>" >
+                    <%= link_to "#{article.title}", article_path(article), {:class => "hrefLink"}%>
+                </h1>
                 <p><%= article.author %>, <%= article.publication %></p>
                 <p class="storyPreview"><%= truncate(article.fulltext, :length => 500 )%></p>
                 <button class="readMore">Read More</button>
@@ -28,4 +42,3 @@
     </div> <!-- End contentSection -->
 </div> <!-- End contentWrapper -->
 <!-- </div>  -->
-<!-- End Containter -->

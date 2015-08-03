@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     def index
         @articles = Article.all
         @user = User.find(session[:user]["id"])
-        @counter
+        @class
     end
 # #new
 #     def new
