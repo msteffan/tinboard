@@ -2,18 +2,33 @@
 
 <!-- navBar -->
 <div class="row" id="navBar">
-    <div class="two columns" id="oneMinute"><a href="oneMinute.html" class="hrefLink">1 Minute</a></div>
-    <div class="two columns" id="twoMinutes"><a href="twoMinutes.html" class="hrefLink">Two Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><a href="tenMinutes.html" class="hrefLink">10 Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><%= link_to "Edit Profile", edit_user_path(@user), {:class => "hrefLink" } %></div>
+   <div class="two columns" id="twoMinutes">
+       <a href="oneMinute.html" class="hrefLink">2 Minutes</a>
+   </div>
+    <div class="two columns" id="fourMinutes"><a href="twoMinutes.html" class="hrefLink">4 Minutes</a></div>
+    <div class="two columns" id="sixMinutes"><a href="tenMinutes.html" class="hrefLink">6 Minutes</a></div>
+    <div class="two columns" id="tenMinutes"><a href="mostRead.html" class="hrefLink">10 Minutes</a></div>
+    <div class="two columns" id="mostRead"><a href="leastRead.html" class="hrefLink">Most Read</a></div>
 </div>
 
 <!-- all saved stories -->
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @user.likes.each do |like| %>
+            <% if like.article.length <= 400 %>
+                <% @class = "twoMinutes" %>
+            <% end %>
+            <% if like.article.length > 400 && like.article.length <= 800 %>
+                <% @class = "fourMinutes" %>
+            <% end %>
+            <% if like.article.length > 800 && like.article.length <= 1200 %>
+                <% @class = "sixMinutes" %>
+            <% end %>
+            <% if like.article.length >= 1200 %>
+                <% @class = "tenMinutes" %>
+            <% end %>
             <!-- <div class="one-third column"> -->
-                <h1 class="storyHeadline leastRead"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
+                <h1 class="storyHeadline <%= @class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
                 <p><%= like.article.author %>, <%= like.article.publication %></p>
                 <p class="storyPreview"><%= truncate(like.article.fulltext, :length => 500 )%></p>
                 <button class="readMore"><%= link_to "Read More", article_path(like.article)%></button>

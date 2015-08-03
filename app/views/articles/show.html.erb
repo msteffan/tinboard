@@ -26,7 +26,19 @@
 <!-- scroll-along tracker -->
 <div class="tracker">
     <div class="row" id="articleView">
-        <h1 class="leastRead"><%= @article.title %></h1>
+        <% if @article.length <= 400 %>
+            <% @class = "twoMinutes" %>
+        <% end %>
+        <% if @article.length > 400 && @article.length <= 800 %>
+            <% @class = "fourMinutes" %>
+        <% end %>
+        <% if @article.length > 800 && @article.length <= 1200 %>
+            <% @class = "sixMinutes" %>
+        <% end %>
+        <% if @article.length >= 1200 %>
+            <% @class = "tenMinutes" %>
+        <% end %>
+        <h1 class="<%= @class %>"><%= @article.title %></h1>
         <!-- <button class="readMore"><%= link_to "Save for Later", likes_path%></button> -->
         <%= render "form" %>
         <p><%= @article.author %>, <%= @article.publication%></p>
