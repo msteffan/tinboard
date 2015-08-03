@@ -5,7 +5,7 @@ class CreateArticle < ActiveRecord::Migration
         t.string :author
         t.string :publication
         t.string :fulltext
-        t.string :length
+        t.integer :length
     end
   end
 end

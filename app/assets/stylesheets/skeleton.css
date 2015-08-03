@@ -54,14 +54,15 @@
     width: 80%; }
   .column,
   .columns {
-    margin-left: 4%; }
+    padding-right: 4%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
 
   .one.column,
   .one.columns                    { width: 4.66666666667%; }
-  .two.columns                    { width: 13.3333333333%; }
+  .two.columns                    { width: 15.5%;
+                                    margin-left: 2%;      }
   .three.columns                  { width: 22%;            }
   .four.columns                   { width: 30.6666666667%; }
   .five.columns                   { width: 39.3333333333%; }

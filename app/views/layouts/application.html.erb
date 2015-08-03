@@ -7,12 +7,13 @@
   <%= csrf_meta_tags %>
   <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
+  <!-- Mobile Specific Metas–––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 </head>
 <body>
     <nav>
-         <!-- loginRow -->
+    <!-- loginRow -->
     <!-- if the user is logged in... -->
       <% if @user == nil %>
       <!-- if the user is logged in... -->
@@ -24,26 +25,15 @@
           <%= link_to "Profile", user_path(@user), {:id=> "profileButton", :class=>"accountButtons" } %>
       <!-- link to sign out in header -->
           <%= link_to "Sign out", sign_out_path, {:id => "signOutButton", :class=>"accountButtons" }  %>
-
       <% end %>
     </nav>
     <div class="container">
         <div class="row " id="headlineLogo">
             <%= link_to (image_tag ("headlineLogo.svg")), articles_path %>
-            <div class="one-half column" style="margin-top: 5%">
-
-            </div>
+            <div class="one-half column" style="margin-top: 5%"></div>
         </div>  <!-- headlineLogo -->
         <h2><%= flash[:notice] %></h2>
-
         <%= yield %>
     </div>
 </body>
 </html>
-
-
-
-<!-- <div class="row clearfix" id="loginRow">
-    <%# image_tag ("loginButton.svg"), id: "loginButton", class: "accountButtons" %>
-    <p class="accountButtons" id="signUpButton">Sign Up</p> -->
-<!-- </div> -->

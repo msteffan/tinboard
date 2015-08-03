@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20150803140138) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.string "publication"
-    t.string "fulltext"
-    t.string "length"
+    t.string  "title"
+    t.string  "author"
+    t.string  "publication"
+    t.string  "fulltext"
+    t.integer "length"
   end
 
   create_table "likes", force: :cascade do |t|

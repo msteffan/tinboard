@@ -1,0 +1,60 @@
+<!-- Progress Bar -->
+    <div class="progress">
+      <div class="wrapper">
+        <div class="bar">
+          <a href="#articleView"></a>
+          <i class="icon-ok"></i>
+          <span></span>
+        </div> <!-- End .bar -->
+      </div> <!-- end .wrapper -->
+    </div><!--  End .progress -->
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ <!-- headlineLogo -->
+  <!-- <div class="container"> -->
+
+<!-- navBar -->
+<div class="row" id="navBar">
+   <div class="two columns" id="oneMinute"><a href="oneMinute.html" class="hrefLink">1 Minute</a></div>
+    <div class="two columns" id="twoMinutes"><a href="twoMinutes.html" class="hrefLink">Two Minutes</a></div>
+    <div class="two columns" id="tenMinutes"><a href="tenMinutes.html" class="hrefLink">10 Minutes</a></div>
+    <div class="two columns" id="mostRead"><a href="mostRead.html" class="hrefLink">Most Read</a></div>
+    <div class="two columns" id="leastRead"><a href="leastRead.html" class="hrefLink">Least read</a></div>
+  </div>
+
+
+<!-- tracker -->
+<div class="tracker">
+<div class="row" id="articleView">
+
+<h1 class="leastRead"><%= @article.title %></h1>
+
+<!-- article container -->
+<div class="articleContent">
+<div class="two-thirds column">
+    <p>
+      <%= @article.fulltext %>
+    </p>
+
+</div> <!-- End Two-Thirds Column -->
+</div> <!-- End Article Content -->
+</div><!--  End Tracker -->
+<!-- 
+<div class="one-third column">
+
+</div>  -->
+
+<!-- End .one-third column -->
+
+
+
+
+</div> <!-- end .articleView -->
+
+
+ <div class="footer">
+    A well informed electorate is a prerequisite for democracy. - Thomas Jefferson
+</div>
+
+<!-- </div> --><!-- <End Containter -->
