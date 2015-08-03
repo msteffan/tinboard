@@ -1,17 +1,40 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate
+
+######## CRUD ROUTES  ########
     #index
     def index
     end
-    #new
 
+    #new
     #Create
 
     #show
+    def show
+        @user = User.find(params[:id])
+    end
 
     #edit
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    #update
+    def update
+        @user = User.find(params[:id])
+        @user.update(user_params)
+        redirect_to user_path(@user)
+    end
 
     #destroy
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to sign_up_path
+    end
+
+######## Authentication Routes  ########
+
     def sign_up
     end
 
@@ -60,5 +83,9 @@ class UsersController < ApplicationController
         redirect_to sign_in_path
     end
 
+    private
+    def user_params
+        params.require(:user).permit(:username)
+    end
 
 end

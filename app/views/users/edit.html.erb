@@ -1,0 +1,19 @@
+<h2>Edit profile</h2>
+
+<%= form_for @user do |f| %>
+<p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+</p>
+<p>
+    <%# f.label :interests %>
+    <%# f.text_field :interests %>
+</p>
+<p>
+<%= f.submit "Update profile" %>
+</p>
+<% end %>
+
+<%= form_for(@user, method: :delete) do |f| %>
+    <% f.submit "Delete account", class: "delete" %>
+<% end %>

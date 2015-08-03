@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 #index
     def index
         # @pins = Pin.all
-        # @user = User.find(params[:id])
+        @user = User.find(session[:user]["id"])
     end
 #new
     def new
@@ -37,9 +37,9 @@ class ArticlesController < ApplicationController
     def destroy
     end
 
-# private
-    # def pin_params
-    #     params.require(:pin).permit(:title, :image_url, :comment, :user_id)
-    # end
+private
+    def article_params
+        params.require(:article).permit(:title, :author, :publication, :fulltext, :length)
+    end
 
 end

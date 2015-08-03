@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
 </head>
 </head>
@@ -12,24 +14,30 @@
     <nav>
          <!-- loginRow -->
     <!-- if the user is logged in... -->
-      <% if session[:user] %>
-      <!-- link to index in header -->
-          <%= link_to "Profile", articles_path, {:id=> "profileButton", :class=>"accountButtons" } %>
-      <!-- link to sign out in header -->
-          <%= link_to "Sign out", sign_out_path, {:id => "signOutButton", :class=>"accountButtons" }  %>
+      <% if @user == nil %>
+      <!-- if the user is logged in... -->
+        <%= link_to (image_tag ("loginButton.svg"), {id: "loginButton", class: "accountButtons"}), sign_in_path %>
+        <%= link_to "Sign up", sign_up_path, { :id=> "signUpButton", :class=>"accountButtons" }  %>
     <!-- if the user is NOT logged in... -->
       <% else %>
-        <!-- if the user is logged in... -->
-          <%= link_to (image_tag ("loginButton.svg"), {id: "loginButton", class: "accountButtons"}), sign_in_path %>
-          <%= link_to "Sign up", sign_up_path, { :id=> "signUpButton", :class=>"accountButtons" }  %>
+      <!-- link to index in header -->
+          <%= link_to "Profile", user_path(@user), {:id=> "profileButton", :class=>"accountButtons" } %>
+      <!-- link to sign out in header -->
+          <%= link_to "Sign out", sign_out_path, {:id => "signOutButton", :class=>"accountButtons" }  %>
+
       <% end %>
     </nav>
-    <h2><%= flash[:notice] %></h2>
+    <div class="container">
+        <div class="row " id="headlineLogo">
+            <%= link_to (image_tag ("headlineLogo.svg")), articles_path %>
+            <div class="one-half column" style="margin-top: 5%">
 
+            </div>
+        </div>  <!-- headlineLogo -->
+        <h2><%= flash[:notice] %></h2>
 
-
-    <%= yield %>
-
+        <%= yield %>
+    </div>
 </body>
 </html>
 

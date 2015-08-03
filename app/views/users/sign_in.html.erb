@@ -1,4 +1,4 @@
-<h2>Sign in</h2>
+<h2>Existing Users Login</h2>
 
 <%= form_tag("/sign_in", method: "post") do %>
     <input type="text" name="username" placeholder="username" value="<%= cookies[:username] %>"/> <input type="password" name="password" placeholder="password" />
