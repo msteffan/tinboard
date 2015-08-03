@@ -6,7 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+</head>
 <body>
+    <nav>
+      <% if session[:user] %>
+        <%= link_to "Tinboard", articles_path %>
+        <%= link_to "#{session[:user]["username"]}: Sign out", sign_out_path %>
+      <% else %>
+          <%= link_to "Sign up", sign_up_path %>
+          <%= link_to "Sign in", sign_in_path %>
+      <% end %>
+</nav>
+<h2><%= flash[:notice] %></h2>
+
+
 
 <%= yield %>
 
