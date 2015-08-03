@@ -1,0 +1,187 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+#loginRow {
+
+
+}
+
+#loginButton {
+	width:10%;
+	float:right;
+}
+
+#signUpButton {
+	float:right;
+	margin:1.2%;
+}
+
+
+#headlineLogo {
+
+	margin-top: 10%;
+	width:60%;
+}
+
+a.hrefLink {
+text-decoration: none;
+color:black;
+
+}
+
+
+#navBar {
+	margin-bottom: 5%;
+}
+
+#oneMinute {
+
+	border-bottom: 5px solid #333333;
+}
+
+#oneMinute:hover {
+
+	border-bottom: 5px solid #00FFF2;
+}
+
+#twoMinutes {
+
+	border-bottom: 5px solid #333333;
+}
+
+#twoMinutes:hover {
+
+	border-bottom: 5px solid #FFFF00;
+}
+
+#tenMinutes {
+
+	border-bottom: 5px solid #333333;
+}
+
+#tenMinutes:hover {
+
+	border-bottom: 5px solid #CD00FF;
+}
+
+
+#mostRead {
+
+	border-bottom: 5px solid #333333;
+}
+
+#mostRead:hover {
+
+	border-bottom: 5px solid #00FF00;
+}
+
+#leastRead {
+
+	border-bottom: 5px solid #333333;
+}
+
+#leastRead:hover {
+
+	border-bottom: 5px solid #FF007A;
+}
+
+
+
+.contentWrapper {
+	padding-top: 5em;
+
+}
+
+.oneMinute {
+	border-bottom: 5px solid #00FFF2;
+}
+.oneMinuteSubline {
+
+	border-bottom: 5px solid #00FFF2;
+	width:25%;
+}
+
+.oneMinute:hover {
+
+	/*border-bottom: 5px solid #00FFF2;*/
+}
+
+.twoMinutes {
+
+	border-bottom: 5px solid #FFFF00;
+}
+
+.twoMinutes:hover {
+
+	/*border-bottom: 5px solid #FFFF00;*/
+}
+
+.tenMinutes {
+
+	border-bottom: 5px solid #CD00FF;
+}
+
+.tenMinutes:hover {
+
+	/*border-bottom: 5px solid #CD00FF;*/
+}
+
+
+.mostRead {
+
+	border-bottom: 5px solid #00FF00;
+}
+
+.mostRead:hover {
+
+	/*border-bottom: 5px solid #00FF00;*/
+}
+
+.leastRead {
+
+	border-bottom: 5px solid #FF007A;
+}
+
+.leastReadSubline {
+
+	border-bottom: 5px solid #FF007A;
+	width:25%;
+}
+
+.leastRead:hover {
+
+	/*border-bottom: 5px solid #FF007A;*/
+}
+
+.readMore {
+	float:right;
+}
+
+.footer {
+  height: 25%;
+  font-size: 28px;
+  text-align: center;
+  color:white;
+}
+
+
+.progress {
+
+position:fixed;
+top:0px;
+left: 0px;
+padding:0px;
+width:100%;
+
+}
