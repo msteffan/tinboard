@@ -1,6 +1,6 @@
 # Tinboard
 
-Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
+Tinboard is a news app for time-conscious readers. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
 
 # User Stories
 
