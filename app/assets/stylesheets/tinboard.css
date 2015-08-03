@@ -14,7 +14,6 @@
 
 #loginRow {
 
-
 }
 
 #loginButton {
@@ -27,9 +26,17 @@
 	margin:1.2%;
 }
 
+#profileButton{
+    width:10%;
+    float:right;
+}
+
+#signOutButton {
+    /*float:right;*/
+    margin:1.2%;
+}
 
 #headlineLogo {
-
 	margin-top: 10%;
 	width:60%;
 }

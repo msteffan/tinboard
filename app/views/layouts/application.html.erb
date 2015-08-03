@@ -5,23 +5,37 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 </head>
 <body>
     <nav>
+         <!-- loginRow -->
+    <!-- if the user is logged in... -->
       <% if session[:user] %>
-        <%= link_to "Tinboard", articles_path %>
-        <%= link_to "#{session[:user]["username"]}: Sign out", sign_out_path %>
+      <!-- link to index in header -->
+          <%= link_to "Profile", articles_path, {:id=> "profileButton", :class=>"accountButtons" } %>
+      <!-- link to sign out in header -->
+          <%= link_to "Sign out", sign_out_path, {:id => "signOutButton", :class=>"accountButtons" }  %>
+    <!-- if the user is NOT logged in... -->
       <% else %>
-          <%= link_to "Sign up", sign_up_path %>
-          <%= link_to "Sign in", sign_in_path %>
+        <!-- if the user is logged in... -->
+          <%= link_to (image_tag ("loginButton.svg"), {id: "loginButton", class: "accountButtons"}), sign_in_path %>
+          <%= link_to "Sign up", sign_up_path, { :id=> "signUpButton", :class=>"accountButtons" }  %>
       <% end %>
-</nav>
-<h2><%= flash[:notice] %></h2>
+    </nav>
+    <h2><%= flash[:notice] %></h2>
 
 
 
-<%= yield %>
+    <%= yield %>
 
 </body>
 </html>
+
+
+
+<!-- <div class="row clearfix" id="loginRow">
+    <%# image_tag ("loginButton.svg"), id: "loginButton", class: "accountButtons" %>
+    <p class="accountButtons" id="signUpButton">Sign Up</p> -->
+<!-- </div> -->
