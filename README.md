@@ -1,6 +1,6 @@
 # Tinboard
 
-Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
+Tinboard is a news app for time-conscious readers. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
 
 # User Stories
 
@@ -64,3 +64,9 @@ Like attributes
 
 - article_id
   
+# Mockups
+Index of all articles (colored bars correspond to length of content):
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/index-view.png)
+
+Article show page: 
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/article-show-page.png)
