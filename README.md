@@ -12,3 +12,4 @@ Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard
 6. As a user, I want to click on an article to load the entire article, so that I can read it.
 7. As a user, I want the option to add stories to my profile's "reading list," so that I can save them and finish reading later.
 8. As a user, I want to be able to remove stories from my "reading list" after I have read them. 
+
