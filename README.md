@@ -14,7 +14,7 @@ Tinboard is a news app for the time-conscious reader. Upon logging into Tinboard
 8. As a user, I want to be able to remove "liked" stories from my reading list after I have read them, so that my reading list stays up to date. 
 
 # ERD
-![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/tinboard_erd.JPG)
+![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/tinboard_erd.JPG)
 
 # DB & Models Structure
 
