@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-
-
-
 $(document).ready(function(){
 
     $(".columns").click(function(){
@@ -33,7 +30,6 @@ $(document).ready(function(){
                 $(this).parent().animate({
                      width: "0"
                 }, 500, function() {})
-                //         console.log(this)
                 $(this).parent().css("display", "none")
                      // Animation complete.
             };
