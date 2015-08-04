@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'querystring'
-gem 'embedly'
 gem 'pry'
 gem 'pg'
 gem 'bcrypt'
