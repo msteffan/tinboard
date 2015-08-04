@@ -3,11 +3,12 @@ Rails.application.routes.draw do
     resources :articles
     resources :likes
 
-   root to: "articles#index"
+   root to: "users#sign_in"
 
    # get '/pins', to: 'pins#index'
    # post '/pins', to: 'pins#create'
    get '/likes', to: 'likes#create'
+   # get '/likes/:id', to: 'likes#destroy'
    # post '/likes', to: 'likes#create'
 
    get '/sign_in', to: 'users#sign_in'
@@ -16,6 +17,4 @@ Rails.application.routes.draw do
    post '/sign_up', to: 'users#sign_up!'
    get '/sign_out', to: 'users#sign_out'
 
-
-   get 'someajax' => 'someajax#render_time'
 end

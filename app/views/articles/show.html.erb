@@ -43,17 +43,16 @@
 
         <!-- article title -->
         <h1 class="<%= @class %>"><%= @article.title %></h1>
+
         <!-- displays either button to save or that it is saved -->
-        <% @article.likes.each do |like|%>
-            <% if like.user_id == @user.id %>
+        <% if @user.likes_article?(@article) %>
                 <button class="readMore belongsToUser">
                     <%= link_to "On your reading list", user_path(@user) %>
                 </button>
-            <% break %>
-            <% else %>
-                <%= render "form"%>
-            <% end %>
+        <% else %>
+            <%= render "form"%>
         <% end %>
+
         <!-- article author & publication -->
         <p><%= @article.author %>, <%= @article.publication%></p>
         <!-- article text container -->

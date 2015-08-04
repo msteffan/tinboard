@@ -20,20 +20,8 @@
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @articles.each do |article| %>
-            <% if article.length <= 400 %>
-                <% @class = "twoMinutes" %>
-            <% end %>
-            <% if article.length > 400 && article.length <= 800 %>
-                <% @class = "fourMinutes" %>
-            <% end %>
-            <% if article.length > 800 && article.length <= 1200 %>
-                <% @class = "sixMinutes" %>
-            <% end %>
-            <% if article.length >= 1200 %>
-                <% @class = "tenMinutes" %>
-            <% end %>
             <div class="one-third column">
-                <h1 class="storyHeadline <%= @class %>" >
+                <h1 class="storyHeadline <%= article.length_class %>" >
                     <%= link_to "#{article.title}", article_path(article), {:class => "hrefLink"}%>
                 </h1>
                 <p><%= article.author %>, <%= article.publication %></p>

@@ -28,15 +28,12 @@ class LikesController < ApplicationController
 
 #show
     def show
-        redirect_to(articles_path)
-        # @user = User.find(params[:id])
-        # @pin = Pin.find(params[:id])
+        # redirect_to(articles_path)
     end
 
 
 #edit
     def edit
-        # @pin = Pin.find(params[:id])
     end
 
 #update
@@ -46,6 +43,10 @@ class LikesController < ApplicationController
 
 #destroy
     def destroy
+        @user = User.find(session[:user]["id"])
+        @like = Like.find(params[:id])
+        @like.destroy
+        redirect_to user_path(@user)
     end
 
 private

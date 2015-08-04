@@ -31,9 +31,12 @@
             <% end %>
             <!-- <div class="one-third column"> -->
                 <h1 class="storyHeadline <%= @class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
+                <button class="readMore"><%= link_to "Read More", article_path(like.article_id) %></button>
+
+                <button class="readMore"><%= link_to "Remove from Reading List", like_path(like.id), :method => "delete" %></button>
                 <p><%= like.article.author %>, <%= like.article.publication %></p>
                 <p class="storyPreview"><%= truncate(like.article.fulltext, :length => 500 )%></p>
-                <button class="readMore"><%= link_to "Read More", article_path(like.article)%></button>
+
 
         <% end %>
     </div> <!-- End contentSection -->
