@@ -20,12 +20,18 @@
 $(document).ready(function(){
 
     $(".columns").click(function(){
-        console.log("hello");
         var self = this
         $('h1').each(function(){
         console.log(self.id);
+            if ($(this).hasClass(self.id) == true){
+                // $(this).parent().animate({
+                //         width: "30.6666666667%"
+                //     }, 500, function() {
+                $(this).parent().css("display", "block")
+                        // Animation complete.
+                    // });
+                }
             if ($(this).hasClass(self.id) == false){
-
                 // $('div.one-third.column').animate({
                 //     width: "0"
                 //     }, 500, function() {
