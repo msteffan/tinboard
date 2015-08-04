@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.png' %>
   <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <!-- Mobile Specific Metas–––––––––––––––––––––––––––––––––– -->
@@ -30,9 +31,9 @@
     <div class="container">
         <div class="row " id="headlineLogo">
             <%= link_to (image_tag ("headlineLogo.svg")), articles_path %>
-            <div class="one-half column" style="margin-top: 5%"></div>
+            <h2>All the news that fits your time.</h2>
         </div>  <!-- headlineLogo -->
-        <h2><%= flash[:notice] %></h2>
+        <h4><%= flash[:notice] %></h4>
         <%= yield %>
     </div>
 </body>

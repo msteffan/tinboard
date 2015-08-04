@@ -38,13 +38,26 @@
         <% if @article.length >= 1200 %>
             <% @class = "tenMinutes" %>
         <% end %>
+
+        <!-- article title -->
         <h1 class="<%= @class %>"><%= @article.title %></h1>
-        <!-- <button class="readMore"><%= link_to "Save for Later", likes_path%></button> -->
-        <%= render "form" %>
+        <!-- displays either button to save or that it is saved -->
+        <% @article.likes.each do |like|%>
+            <% if like.user_id == @user.id %>
+                <button class="readMore belongsToUser">
+                    <%= link_to "On your reading list", user_path(@user) %>
+                </button>
+            <% break %>
+            <% else %>
+                <%= render "form"%>
+            <% end %>
+        <% end %>
+        <!-- article author & publication -->
         <p><%= @article.author %>, <%= @article.publication%></p>
-        <!-- article container -->
+        <!-- article text container -->
         <div class="articleContent">
             <div class="two-thirds column">
+                <!-- article full text -->
                 <p><%= @article.fulltext %></p>
             </div> <!-- End Two-Thirds Column -->
         </div> <!-- End Article Content -->

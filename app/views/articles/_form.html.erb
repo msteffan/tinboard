@@ -1,4 +1,5 @@
-<%= form_for Like.new do |f| %>
+
+<%= form_for Like.new, html: {class: "readMore"} do |f| %>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.hidden_field :article_id, :value => @article.id %>
 
