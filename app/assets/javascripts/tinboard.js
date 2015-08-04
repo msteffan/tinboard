@@ -1,20 +1,20 @@
 // Scroll Completion Animation
 (function($){
     $(function(){
-      //
-      //
-    //   var wrapper_top = $(".progress .wrapper").offset().top;
-    //   $(window).scroll(function (){
-    //     var wrapper_height = $(".progress .wrapper").height();
-      //
-    //     // Affixes Progress Bars
-    //       var top = $(this).scrollTop();
-    //     if (top > wrapper_top - 10) {
-    //         // $(".progress .wrapper").addClass("affix");
-    //     }
-    //     else {
-    //             // $(".progress .wrapper").removeClass("affix");
-    //     }
+
+
+      var wrapper_top = $(".progress .wrapper").offset().top;
+      $(window).scroll(function (){
+        var wrapper_height = $(".progress .wrapper").height();
+
+        // Affixes Progress Bars
+          var top = $(this).scrollTop();
+        if (top > wrapper_top - 10) {
+            // $(".progress .wrapper").addClass("affix");
+        }
+        else {
+                // $(".progress .wrapper").removeClass("affix");
+        }
 
 
         // Calculate each progress section
@@ -62,4 +62,4 @@
 
 
     }); // end of document ready
-// })(jQuery); // end of jQuery name space
+})(jQuery); // end of jQuery name space

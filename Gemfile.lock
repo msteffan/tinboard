@@ -169,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   pg
   pry
+  querystring
   rails (= 4.2.3)
   rails_12factor
   sass-rails (~> 5.0)

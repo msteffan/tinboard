@@ -24,7 +24,7 @@ $(document).ready(function(){
                     width: "30.6666666667%"
                  }, 500, function() {})
                 $(this).parent().css("display", "block")
-                        // Animation complete.
+                    // Animation complete.
             };
             if ($(this).hasClass(self.id) == false){
                 $(this).parent().animate({

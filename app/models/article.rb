@@ -5,6 +5,10 @@ class Article < ActiveRecord::Base
       self.fulltext.split(" ").length
   end
 
+  def title_length
+      self.title.to_s.split(" ").length
+  end
+
   def length_class
       if self.length <= 400
           html_class = "twoMinutes"
@@ -17,6 +21,6 @@ class Article < ActiveRecord::Base
       end
 
       return html_class
-      end
+  end
 
 end
