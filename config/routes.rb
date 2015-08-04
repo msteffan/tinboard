@@ -16,4 +16,6 @@ Rails.application.routes.draw do
    post '/sign_up', to: 'users#sign_up!'
    get '/sign_out', to: 'users#sign_out'
 
+
+   get 'someajax' => 'someajax#render_time'
 end

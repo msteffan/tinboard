@@ -1,20 +1,20 @@
 // Scroll Completion Animation
 (function($){
     $(function(){
-      
-
-      var wrapper_top = $(".progress .wrapper").offset().top;
-      $(window).scroll(function (){
-        var wrapper_height = $(".progress .wrapper").height();
-
-        // Affixes Progress Bars
-          var top = $(this).scrollTop();
-        if (top > wrapper_top - 10) {
-            // $(".progress .wrapper").addClass("affix");
-        }
-        else {
-                // $(".progress .wrapper").removeClass("affix");
-        }
+      //
+      //
+    //   var wrapper_top = $(".progress .wrapper").offset().top;
+    //   $(window).scroll(function (){
+    //     var wrapper_height = $(".progress .wrapper").height();
+      //
+    //     // Affixes Progress Bars
+    //       var top = $(this).scrollTop();
+    //     if (top > wrapper_top - 10) {
+    //         // $(".progress .wrapper").addClass("affix");
+    //     }
+    //     else {
+    //             // $(".progress .wrapper").removeClass("affix");
+    //     }
 
 
         // Calculate each progress section
@@ -24,29 +24,17 @@
             var this_bottom = this_top + height;
             var percent = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
 // This is the seciton we'll need to revisit
             // Scrolled within current section
             if (top >= this_top && top <= this_bottom) {
                 percent = ((top - this_top) / (height - wrapper_height)) * 225;
                 console.log(percent);
-                if (percent >= 100) { 
-                    percent = 100; 
+                if (percent >= 100) {
+                    percent = 100;
                     $(".progress .wrapper .bar:eq("+i+") i").css("color", "#fff");
                 }
                 else {
-                    $(".progress .wrapper .bar:eq("+i+") i").css("color", "#36a7f3");                                   
+                    $(".progress .wrapper .bar:eq("+i+") i").css("color", "#36a7f3");
                 }
             }
             else if (top > this_bottom) {
@@ -57,21 +45,7 @@
             $(".progress .wrapper .bar:eq("+i+") span").css("width", percent + "%");
         });
       });
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
       // Smooth Scroll Links
       $(".wrapper .bar a").click(function (e){
@@ -81,9 +55,11 @@
         console.log(hash);
         $('html, body').animate({
         scrollTop: $("#"+ hash).offset().top - 10
-    }, 500);
+        }, 500);
 
       });
 
+
+
     }); // end of document ready
-})(jQuery); // end of jQuery name space
+// })(jQuery); // end of jQuery name space
