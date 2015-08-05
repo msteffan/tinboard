@@ -22,14 +22,14 @@ $(document).ready(function(){
             if ($(this).hasClass(self.id) == true){
                 $(this).parent().animate({
                     width: "30.6666666667%"
-                 }, 500, function() {})
+                }, 800, function() {})
                 $(this).parent().css("display", "block")
                     // Animation complete.
             };
             if ($(this).hasClass(self.id) == false){
                 $(this).parent().animate({
                      width: "0"
-                }, 500, function() {})
+                }, 800, function() {})
                 $(this).parent().css("display", "none")
                      // Animation complete.
             };

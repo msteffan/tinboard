@@ -1,21 +1,13 @@
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
 <!-- navBar -->
-<div class="row" id="navBar">
-   <div class="two columns" id="twoMinutes">2 Minutes
-       <%# link_to "2 minutes", { :class=>"hrefLink", :remote => true} %>
-   </div>
-    <div class="two columns" id="fourMinutes"> 4 minutes
-        <!-- <a href="twoMinutes.html" class="hrefLink">4 Minutes</a> -->
-    </div>
-    <div class="two columns" id="sixMinutes"><a href="#" class="hrefLink">6 Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><a href="#" class="hrefLink">10 Minutes</a></div>
-    <div class="two columns" id="mostRead"><a href="#" class="hrefLink">Most Read</a></div>
+<%= render "nav" %>
+<div class="two columns" id="mostRead">
+    <%= link_to "Most Read", { :class=>"hrefLink", :remote => true} %>
+</div>
 </div>
 
 
+<!-- content below here -->
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @articles.each do |article| %>
@@ -25,7 +17,8 @@
                 </h1>
                 <p><%= article.author %>, <%= article.publication %></p>
                 <p class="storyPreview"><%= truncate(article.fulltext, :length => 400 )%></p>
-                <button class="readMore">Read More</button>
+                <button class="readMore"><%= link_to "Read More", article_path(article), {:class => "hrefLink"}%>
+                </button>
             </div>
         <% end %>
     </div> <!-- End contentSection -->

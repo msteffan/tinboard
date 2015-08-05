@@ -1,13 +1,7 @@
 <h2><%= @user.username %>'s Reading List</h2>
 
 <!-- navBar -->
-<div class="row" id="navBar">
-   <div class="two columns" id="twoMinutes">
-       <a href="oneMinute.html" class="hrefLink">2 Minutes</a>
-   </div>
-    <div class="two columns" id="fourMinutes"><a href="twoMinutes.html" class="hrefLink">4 Minutes</a></div>
-    <div class="two columns" id="sixMinutes"><a href="tenMinutes.html" class="hrefLink">6 Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><a href="mostRead.html" class="hrefLink">10 Minutes</a></div>
+<%= render "articles/nav" %>
     <div class="two columns" id="Settings">
         <%= link_to "Edit Profile", edit_user_path(@user) %>
     </div>
@@ -17,25 +11,15 @@
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @user.likes.each do |like| %>
-            <% if like.article.length <= 400 %>
-                <% @class = "twoMinutes" %>
-            <% end %>
-            <% if like.article.length > 400 && like.article.length <= 800 %>
-                <% @class = "fourMinutes" %>
-            <% end %>
-            <% if like.article.length > 800 && like.article.length <= 1200 %>
-                <% @class = "sixMinutes" %>
-            <% end %>
-            <% if like.article.length >= 1200 %>
-                <% @class = "tenMinutes" %>
-            <% end %>
             <!-- <div class="one-third column"> -->
-                <h1 class="storyHeadline <%= @class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
+                <h1 class="storyHeadline <%= like.article.length_class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
                 <button class="readMore"><%= link_to "Read More", article_path(like.article_id) %></button>
 
                 <button class="readMore"><%= link_to "Remove from Reading List", like_path(like.id), :method => "delete" %></button>
+
                 <p><%= like.article.author %>, <%= like.article.publication %></p>
-                <p class="storyPreview"><%= truncate(like.article.fulltext, :length => 500 )%></p>
+
+                <p class="storyPreview wide"><%= truncate(like.article.fulltext, :length => 500 )%></p>
 
 
         <% end %>

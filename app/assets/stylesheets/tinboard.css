@@ -6,6 +6,15 @@ a {
     color: black;
 }
 
+a:hover {
+    color: black;
+}
+
+.columns:hover {
+    cursor: pointer;
+}
+
+
 .storyHeadline {
 
     overflow: hidden;
@@ -15,6 +24,11 @@ a {
     /*word-wrap: break-all;*/
 
 }
+
+.storyPreview.wide {
+    height: 120px;
+}
+
 
 .storyPreview {
     height: 320px;
@@ -71,9 +85,10 @@ a {
     margin-left: -6%;
 }
 
-a.hrefLink {
+.hrefLink {
 text-decoration: none;
 color:black;
+cursor: pointer;
 
 }
 
@@ -220,8 +235,12 @@ color:black;
     background-color: #FFAF94;
 }
 
+
 .readMore {
 	float:right;
+}
+input[type="submit"]:hover {
+    background-color: #FFAF94;
 }
 
 

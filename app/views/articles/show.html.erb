@@ -12,18 +12,11 @@
 <!-- Primary Page Layout -->
 
 <!-- navBar -->
-<div class="row" id="navBar">
-   <div class="two columns" id="twoMinutes">
-       <a href="oneMinute.html" class="hrefLink">2 Minutes</a>
-   </div>
-   <div class="two columns" id="fourMinutes"> 4 minutes
-       <!-- <a href="twoMinutes.html" class="hrefLink">4 Minutes</a> -->
-   </div>
-    <div class="two columns" id="sixMinutes"><a href="tenMinutes.html" class="hrefLink">6 Minutes</a></div>
-    <div class="two columns" id="tenMinutes"><a href="mostRead.html" class="hrefLink">10 Minutes</a></div>
-    <div class="two columns" id="mostRead"><a href="leastRead.html" class="hrefLink">Most Read</a></div>
+<%= render "nav" %>
+<div class="two columns" id="mostRead">
+    <%= link_to "Most Read", { :class=>"hrefLink", :remote => true} %>
 </div>
-
+</div>
 
 <!-- scroll-along tracker -->
 <div class="tracker">
@@ -53,7 +46,7 @@
 
 
 <div class="footer">
-FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jefferson 
+FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jefferson
 </div>
 
 <script>
