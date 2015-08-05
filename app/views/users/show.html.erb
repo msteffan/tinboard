@@ -11,7 +11,7 @@
 <div class="contentWrapper">
     <div class="row contentSection">
         <% @user.likes.each do |like| %>
-            <!-- <div class="one-third column"> -->
+            <div>
                 <h1 class="storyHeadline <%= like.article.length_class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
                 <button class="readMore"><%= link_to "Read More", article_path(like.article_id) %></button>
 
@@ -20,8 +20,7 @@
                 <p><%= like.article.author %>, <%= like.article.publication %></p>
 
                 <p class="storyPreview wide"><%= truncate(like.article.fulltext, :length => 500 )%></p>
-
-
+            </div>    
         <% end %>
     </div> <!-- End contentSection -->
 </div> <!-- End contentWrapper -->

@@ -93,9 +93,13 @@ cursor: pointer;
 }
 
 /************************* Nav elements**************************/
+/*
+#navBar.row.users.show {
+    margin-bottom: 2%;
+}*/
 
 #navBar {
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 }
 
 #twoMinutes {

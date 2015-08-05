@@ -62,6 +62,7 @@ class UsersController < ApplicationController
         @user = User.find_by(username: params[:username])
         if !@user
           message = "This user doesn't exist!"
+          redirect_to action: :sign_up
         elsif !BCrypt::Password.new(@user.password_digest).is_password?(params[:password])
           message = "Your password's wrong!"
           redirect_to action: :sign_in

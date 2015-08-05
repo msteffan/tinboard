@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery-readyselector
 
 $(document).ready(function(){
 
@@ -20,20 +21,49 @@ $(document).ready(function(){
         var self = this
         $('h1').each(function(){
             if ($(this).hasClass(self.id) == true){
-                $(this).parent().animate({
-                    width: "30.6666666667%"
-                }, 800, function() {})
-                $(this).parent().css("display", "block")
-                    // Animation complete.
-            };
-            if ($(this).hasClass(self.id) == false){
+                if ($(self).parent().hasClass("users")){
+                    $(this).parent().animate({
+                        width: "100%"
+                    }, 800, function() {})
+                    $(this).parent().css("display", "block")
+                } else {
+                    $(this).parent().animate({
+                        width: "33.3333333%"
+                    }, 800, function() {})
+                    $(this).parent().css("display", "block")
+                } // closes "users" class else
+            } else {
                 $(this).parent().animate({
                      width: "0"
                 }, 800, function() {})
-                $(this).parent().css("display", "none")
+                $(this).parent().css("display", "none");
                      // Animation complete.
             };
         }); // closes h1.each function
-    }); // closes columns click function
+     });// closes columns click function
 
+
+
+
+    // if ($("#navBar").hasClass(".row.articles.show")){
+    //     $(".columns").click(function(){
+    //         var self = this
+    //         $('h1').each(function(){
+    //             if ($(this).hasClass(self.id) == true){
+    //                 $(this).parent().animate({
+    //                     width: "100%"
+    //                 }, 800, function() {})
+    //                 $(this).parent().css("display", "block")
+    //                     // Animation complete.
+    //             };
+    //             if ($(this).hasClass(self.id) == false){
+    //                 $(this).parent().animate({
+    //                      width: "0"
+    //                 }, 800, function() {})
+    //                 $(this).parent().css("display", "none")
+    //                      // Animation complete.
+    //             };
+    //         }); // closes h1.each function
+    //     }); // closes columns click function
+    // }
 }); // closes document.ready

@@ -1,4 +1,5 @@
-<div class="row" id="navBar">
+
+<div class="row <%= controller_name %> <%= action_name %>" id="navBar">
    <div class="two columns" id="twoMinutes">
        <%= link_to "2 minutes", { :class=>"hrefLink", :remote => true} %>
    </div>
@@ -11,5 +12,4 @@
     <div class="two columns" id="tenMinutes">
         <%= link_to "10 minutes", { :class=>"hrefLink", :remote => true} %>
     </div>
-
 <!-- </div> -->
