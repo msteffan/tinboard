@@ -15,6 +15,9 @@
 //= require_tree .
 //= require jquery-readyselector
 
+
+
+
 $(document).ready(function(){
 
     $(".columns").click(function(){

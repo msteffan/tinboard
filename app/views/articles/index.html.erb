@@ -1,4 +1,3 @@
-
 <!-- navBar -->
 <%= render "nav" %>
 <div class="two columns" id="mostRead">
@@ -10,6 +9,19 @@
 <!-- content below here -->
 <div class="contentWrapper">
     <div class="row contentSection">
+        <!-- playing with Guardian content below here -->
+        <% @responses['response']['results'].each do |response| %>
+            <div class="one-half column">
+                <h1 class="storyHeadline twoMinutes" >
+                    <%= truncate(response['fields']['headline'], :length => 400 )%>
+                </h1>
+                <p><%= response['fields']['byline']%>, The Guardian</p>
+                <p class="storyPreview"><%= truncate(sanitize(response['fields']['body'], :tags=>[]), :length => 400 )%></p>
+                <button class="readMore"><%= link_to "Read More", articles_path, {:class => "hrefLink"}%>
+                </button>
+            </div>
+        <% end %>
+        <!-- seed data below here -->
         <% @articles.each do |article| %>
             <div class="one-third column">
                 <h1 class="storyHeadline <%= article.length_class %>" >
