@@ -1,20 +1,23 @@
-
-default: &default
-  adapter: postgresql
-  pool: 5
-  timeout: 5000
-
 development:
-  <<: *default
-  database: tinboard
+  adapter: postgresql
+  encoding: utf8
+  database: tinboard_development
+  pool: 5
+  username:
+  password:
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
   database: tinboard_test
+  pool: 5
+  username:
+  password:
 
 production:
-  <<: *default
-  database: tinboard
+  adapter: postgresql
+  encoding: utf8
+  database: tinboard_production
+  pool: 5
+  username:
+  password:
