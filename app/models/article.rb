@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
           html_class = "fourMinutes"
       elsif self.length <= 1200
           html_class = "sixMinutes"
-      elsif self.length > 2000
+      elsif self.length > 1201
          html_class = "tenMinutes"
       end
 
