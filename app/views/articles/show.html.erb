@@ -12,11 +12,11 @@
 <!-- Primary Page Layout -->
 
 <!-- navBar -->
-<%= render "nav" %>
-        <div class="two columns" id="mostRead">
-            <%= link_to "Most Read", { :class=>"hrefLink", :remote => true} %>
-        </div>
+<div class="row" id="navBar">
+    <div class="two columns" id="mostRead">
+        <%= link_to "See all", articles_path, { :class=>"hrefLink" } %>
     </div>
+</div>
 <!-- scroll-along tracker -->
 <div class="tracker">
     <div class="row" id="articleView">
