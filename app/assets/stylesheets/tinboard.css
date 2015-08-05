@@ -7,26 +7,20 @@ a {
 }
 
 .storyHeadline {
+
+    overflow: hidden;
     font-size: 2.5em;
     padding-top: 1.25em;
-    height: 100px;
+    height: 90px;
     /*word-wrap: break-all;*/
-    -ms-word-break: break-all;
-     word-break: break-all;
 
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-        hyphens: auto;
 }
 
 .storyPreview {
+    height: 320px;
+    overflow: hidden;
     /*padding-bottom: 50px;*/
-    -ms-word-break: break-all;
-         word-break: break-all;
 
-    -webkit-hyphens: auto;
-       -moz-hyphens: auto;
-            hyphens: auto;
 }
 
 .clearfix:after {
@@ -61,8 +55,6 @@ a {
 #profileButton{
     width:10%;
     float:right;
-    padding-top: 16px;
-    text-align: center;
 }
 
 #signOutButton {
@@ -74,6 +66,9 @@ a {
 	margin-top: 6%;
     margin-bottom: 6%;
 	width:60%;
+}
+#headlineLogo img {
+    margin-left: -6%;
 }
 
 a.hrefLink {
@@ -154,7 +149,7 @@ color:black;
 
 .contentWrapper {
 	/*padding-top: 5em;*/
-    width: 115%;
+    width: 100%;
 }
 
 .twoMinutes {

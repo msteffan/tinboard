@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tinboard</title>
+  <title>timebox</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -23,7 +23,7 @@
     <!-- if the user is NOT logged in... -->
       <% else %>
       <!-- link to index in header -->
-          <%= link_to "Profile", user_path(@user), {:id=> "profileButton", :class=>"accountButtons" } %>
+          <%= link_to (image_tag ("profileButton.svg"), {id: "profileButton", class: "accountButtons"}), user_path(@user) %>
       <!-- link to sign out in header -->
           <%= link_to "Sign out", sign_out_path, {:id => "signOutButton", :class=>"accountButtons" }  %>
       <% end %>

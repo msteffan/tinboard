@@ -21,10 +21,10 @@
         <% @articles.each do |article| %>
             <div class="one-third column">
                 <h1 class="storyHeadline <%= article.length_class %>" >
-                    <%= link_to truncate(article.title, :length => 28), article_path(article), {:class => "hrefLink"}%>
+                    <%= link_to truncate(article.title, :length => 35), article_path(article), {:class => "hrefLink"}%>
                 </h1>
                 <p><%= article.author %>, <%= article.publication %></p>
-                <p class="storyPreview"><%= truncate(article.fulltext, :length => 307 )%></p>
+                <p class="storyPreview"><%= truncate(article.fulltext, :length => 400 )%></p>
                 <button class="readMore">Read More</button>
             </div>
         <% end %>
