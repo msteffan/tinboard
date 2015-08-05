@@ -218,7 +218,7 @@ cursor: pointer;
 }
 
 .mostRead {
-
+    outline-bottom: 5px solid black;
 	border-bottom: 5px solid #FF007A;
 }
 

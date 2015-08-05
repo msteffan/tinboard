@@ -23,4 +23,5 @@ class Article < ActiveRecord::Base
       return html_class
   end
 
+
 end

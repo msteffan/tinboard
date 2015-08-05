@@ -28,7 +28,7 @@ $(document).ready(function(){
                     $(this).parent().css("display", "block")
                 } else {
                     $(this).parent().animate({
-                        width: "33.3333333%"
+                        width: "30.66666667%"
                     }, 800, function() {})
                     $(this).parent().css("display", "block")
                 } // closes "users" class else

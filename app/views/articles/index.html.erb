@@ -2,7 +2,7 @@
 <!-- navBar -->
 <%= render "nav" %>
 <div class="two columns" id="mostRead">
-    <%= link_to "Most Read", { :class=>"hrefLink", :remote => true} %>
+    <%= link_to "Most Read", { :class=>"hrefLink"} %>
 </div>
 </div>
 
@@ -12,9 +12,10 @@
     <div class="row contentSection">
         <% @articles.each do |article| %>
             <div class="one-third column">
-                <h1 class="storyHeadline <%= article.length_class %>" >
+                <h1 class="storyHeadline <%= article.length_class %> <%= most_read?(article) %>" >
                     <%= link_to truncate(article.title, :length => 35), article_path(article), {:class => "hrefLink"}%>
                 </h1>
+
                 <p><%= article.author %>, <%= article.publication %></p>
                 <p class="storyPreview"><%= truncate(article.fulltext, :length => 400 )%></p>
                 <button class="readMore"><%= link_to "Read More", article_path(article), {:class => "hrefLink"}%>
