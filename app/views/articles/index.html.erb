@@ -6,18 +6,27 @@
 </div>
 
 
+<%= form_tag("/articles", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <!-- content below here -->
 <div class="contentWrapper">
     <div class="row contentSection">
         <!-- playing with Guardian content below here -->
-        <% @responses['response']['results'].each do |response| %>
+        <% if @guardian_article %>
             <div class="one-half column">
-                <h1 class="storyHeadline twoMinutes" >
-                    <%= truncate(response['fields']['headline'], :length => 400 )%>
+                <h1 class="storyHeadline <%= @guardian_article.length_class %>" >
+                    <%= truncate(@guardian_article.headline, :length => 400 )%>
                 </h1>
-                <p><%= response['fields']['byline']%>, The Guardian</p>
-                <p class="storyPreview"><%= truncate(sanitize(response['fields']['body'], :tags=>[]), :length => 400 )%></p>
-                <button class="readMore"><%= link_to "Read More", articles_path, {:class => "hrefLink"}%>
+                <p><%= @guardian_article.byline%>, The Guardian</p>
+                <p class="storyPreview">
+                    <%= truncate(sanitize(@guardian_article.body, :tags=>[]), :length => 400 )%>
+                </p>
+                <%= sanitize(@guardian_article.body, :tags => []).length %>
+                <button class="readMore"><%= link_to "Read More", "#{ @guardian_article.web_url}", {:class => "hrefLink"}%>
                 </button>
             </div>
         <% end %>
