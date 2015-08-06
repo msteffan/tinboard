@@ -25,7 +25,6 @@
                 <p class="storyPreview">
                     <%= truncate(sanitize(@guardian_article.body, :tags=>[]), :length => 400 )%>
                 </p>
-                <%= sanitize(@guardian_article.body, :tags => []).length %>
                 <button class="readMore"><%= link_to "Read More", "#{ @guardian_article.web_url}", {:class => "hrefLink"}%>
                 </button>
             </div>

@@ -52,7 +52,7 @@ class GuardianArticle
             html_class = "fourMinutes"
         elsif body.length <= 1200
             html_class = "sixMinutes"
-        else body.length > 1201
+        elsif body.length > 1201
            html_class = "tenMinutes"
         end
 
