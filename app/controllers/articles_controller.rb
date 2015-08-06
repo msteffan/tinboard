@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     def index
         if params[:query] != nil
             @guardian_article = GuardianArticle.new(params[:query])
+            # cookies[:query] = params[:query]
         end
         @articles = Article.all
         @user = User.find(session[:user]["id"])
@@ -18,7 +19,8 @@ class ArticlesController < ApplicationController
     end
 
     def guardian_show
-        @guardian_article = GuardianArticle.find_by(params[:query])
+
+        @guardian_article = GuardianArticle.find_by(cookies[:query])
     end
 
     private

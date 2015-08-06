@@ -18,17 +18,17 @@
         <!-- external Guardian content below here -->
         <% if @guardian_article %>
             <% @guardian_article.results.each do |result| %>
-                <div class="one-half column">
-                    <h1 class="storyHeadline <%= ext_length_class(result) %>" >
+                <div class="one-half column externalArticle">
+                    <h1 class="storyHeadline externalArticle <%= ext_length_class(result) %>" >
                         <%= link_to truncate(result['fields']['headline'], :length => 50), "#{ result['webUrl']}", {:class => "hrefLink"}%>
                     </h1>
-                    <p><%= result['fields']['byline']%>, The Guardian</p>
-                    <p class="storyPreview">
-                        <%= truncate(sanitize(result['fields']['body'], :tags=>[]), :length => 400 )%>
-                    </p>
-
-                    <button class="readMore"><%= link_to "Read More", guardian_show_path, {:class => "hrefLink"}%>
-                    </button>
+                    <p class="no-overflow"><%= result['fields']['byline']%>, The Guardian</p>
+                    <div class="hello">
+                        <p class="storyPreview externalArticle">
+                            <%= sanitize(result['fields']['body'], :tags=>[])%>
+                        </p>
+                        <div class="readMore hrefLink guardianClick">Read More</div>
+                    </div>
                 </div>
             <% end %>
         <% end %>
@@ -41,8 +41,13 @@
 
                 <p><%= article.author %>, <%= article.publication %></p>
                 <p class="storyPreview"><%= truncate(article.fulltext, :length => 400 )%></p>
-                <button class="readMore"><%= link_to "Read More", article_path(article), {:class => "hrefLink"}%>
-                </button>
+
+                <div class="readMore hrefLink">
+                    <%= link_to "Read More", article_path(article), {:class => "hrefLink" }%>
+                </div>
+                <%# link_to article_path(article), {:class => "hrefLink"} do %>
+                <!-- <button class='readMore'>Read More</button> -->
+                <%# end %>
             </div>
         <% end %>
     </div> <!-- End contentSection -->

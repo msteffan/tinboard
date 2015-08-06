@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  nav {
      height: 100px;
  }
@@ -181,6 +182,9 @@
  }
 
  /*************************content container elements**************************/
+.no-overflow {
+    overflow: scroll;
+}
 
  .one-half {
      padding-top: 3em;
@@ -222,7 +226,6 @@
 
 
  .mostRead {
-     outline-bottom: 5px solid black;
  	border-bottom: 5px solid #FF007A;
  }
 
@@ -240,6 +243,7 @@
  .tracker {
      padding-top: 3em;
  }
+
  .belongsToUser {
      background-color: #FFAF94;
  }
@@ -247,6 +251,22 @@
 
  .readMore {
  	float:right;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    float: right;
+    border-radius: 5px;
+    height: 26px;
+    width: 147px;
+    text-align: center;
+    padding-top: 11px;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+ }
+
+ .align-right {
+     float: right;
  }
  input[type="submit"]:hover {
      background-color: #FFAF94;

@@ -23,9 +23,10 @@
         <h1 class="<%= @article.length_class %>"><%= @article.title %></h1>
         <!-- displays either button to save or that it is saved -->
         <% if @user.likes_article?(@article) %>
-                <button class="readMore belongsToUser">
-                    <%= link_to "On your reading list", user_path(@user) %>
-                </button>
+                <div class="readMore belongsToUser">
+                    <%= link_to "On your list", user_path(@user) %>
+                </div>
+                
         <% else %>
             <%= render "form"%>
         <% end %>
@@ -83,7 +84,7 @@ FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jeffer
                 } else if ($('h1').hasClass("sixMinutes")){
                     percent = ((top - this_top) / (height - wrapper_height)) * 150;
                 } else {
-                    percent = ((top - this_top) / (height - wrapper_height)) * 100;
+                    percent = ((top - this_top) / (height - wrapper_height)) * 130;
                 }
 
                 console.log(percent);

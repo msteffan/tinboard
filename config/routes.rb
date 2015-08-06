@@ -11,8 +11,6 @@ Rails.application.routes.draw do
    # get '/likes/:id', to: 'likes#destroy'
    # post '/likes', to: 'likes#create'
 
-   get '/guardian_show', to: 'articles#guardian_show'
-
    get '/sign_in', to: 'users#sign_in'
    post '/sign_in', to: 'users#sign_in!'
    get '/sign_up', to: 'users#sign_up'

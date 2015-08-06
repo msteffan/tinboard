@@ -18,7 +18,7 @@
 
 
 $(document).ready(function(){
-
+    var counter = 1;
     $(".columns").click(function(){
         var self = this
         $('h1').each(function(){
@@ -43,5 +43,31 @@ $(document).ready(function(){
             };
         }); // closes h1.each function
      });// closes columns click function
+
+     $(".guardianClick").click(function(){
+         if (counter % 2 != 0) {
+             var self = this;
+
+             console.log(counter);
+             $(this).parent().parent().animate({
+                 width: "100%"
+             }, 800, function(){
+                 $(self).prev().css("overflow", "scroll")
+                 $(self).html("See Less")
+                 $(self).css("background-color", "#FFAF94")
+             });
+             counter++
+        } else {
+            var self = this;
+             $(this).parent().parent().animate({
+                 width: "48%"
+             }, 800, function(){
+                 $(".storyPreview").css("overflow", "hidden")
+                 $(self).html("You've Read This!")
+             });
+             counter++
+         }
+        //  });
+     }); // closes guardianClick function
 
 }); // closes document.ready
