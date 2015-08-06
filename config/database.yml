@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: tinboard_development
+  database: tinboard
   pool: 5
   username:
   password:
@@ -9,7 +9,7 @@ development:
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: tinboard_test
+  database: tinboard
   pool: 5
   username:
   password:

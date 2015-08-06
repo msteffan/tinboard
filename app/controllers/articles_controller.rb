@@ -4,6 +4,9 @@ class ArticlesController < ApplicationController
 
 #index
     def index
+        if params[:query] != nil 
+            @guardian_article = GuardianArticle.new(params[:query])
+        end
         @articles = Article.all
         @user = User.find(session[:user]["id"])
     end
@@ -21,3 +24,5 @@ class ArticlesController < ApplicationController
     end
 
 end
+
+# in view, create get form, input tag name = whatever the params are; action routes to the same controller action that generate the form, method is a GET request
