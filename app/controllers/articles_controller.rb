@@ -18,9 +18,7 @@ class ArticlesController < ApplicationController
     end
 
     def guardian_show
-        if params[:query] != nil
-            @guardian_article = GuardianArticle.find_by(params[:query])
-        end
+        @guardian_article = GuardianArticle.find_by(params[:query])
     end
 
     private
