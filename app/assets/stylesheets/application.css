@@ -42,6 +42,9 @@
      height: 120px;
  }
 
+.one-half .storyPreview {
+    height: 216px;
+}
 
  .storyPreview {
      height: 320px;
