@@ -15,12 +15,11 @@
 <!-- content below here -->
 <div class="contentWrapper">
     <div class="row contentSection">
-        <!-- playing with Guardian content below here -->
+        <!-- external Guardian content below here -->
         <% if @guardian_article %>
             <% @guardian_article.results.each do |result| %>
                 <div class="one-half column">
-                    <h1 class="storyHeadline
-                    <%# result.ext_length_class %>" >
+                    <h1 class="storyHeadline <%= ext_length_class(result) %>" >
                         <%= link_to truncate(result['fields']['headline'], :length => 50), "#{ result['webUrl']}", {:class => "hrefLink"}%>
                     </h1>
                     <p><%= result['fields']['byline']%>, The Guardian</p>
@@ -28,7 +27,7 @@
                         <%= truncate(sanitize(result['fields']['body'], :tags=>[]), :length => 400 )%>
                     </p>
 
-                    <button class="readMore"><%= link_to "Read More", "#{ result['webUrl']}", {:class => "hrefLink"}%>
+                    <button class="readMore"><%= link_to "Read More", guardian_show_path, {:class => "hrefLink"}%>
                     </button>
                 </div>
             <% end %>

@@ -17,6 +17,11 @@ class ArticlesController < ApplicationController
         @likes = @article.likes
     end
 
+    def guardian_show
+        if params[:query] != nil
+            @guardian_article = GuardianArticle.find_by(params[:query])
+        end
+    end
 
     private
     def article_params

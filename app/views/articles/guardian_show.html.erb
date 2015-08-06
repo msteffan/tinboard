@@ -20,23 +20,7 @@
 <div class="tracker">
     <div class="row" id="articleView">
         <!-- article title -->
-        <h1 class="<%= @article.length_class %>"><%= @article.title %></h1>
-        <!-- displays either button to save or that it is saved -->
-        <% if @user.likes_article?(@article) %>
-                <button class="readMore belongsToUser">
-                    <%= link_to "On your reading list", user_path(@user) %>
-                </button>
-        <% else %>
-            <%= render "form"%>
-        <% end %>
-
-        <!-- article author & publication -->
-        <p><%= @article.author %>, <%= @article.publication%></p>
-        <!-- article text container -->
-        <div class="articleContent">
-            <div class="two-thirds column">
-                <!-- article full text -->
-                <p><%= @article.fulltext %></p>
+        <%= @guardian_article %>
             </div> <!-- End Two-Thirds Column -->
         </div> <!-- End Article Content -->
     </div><!--  End article view -->
@@ -73,19 +57,10 @@ FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jeffer
             var this_bottom = this_top + height;
             var percent = 0;
 
-// tracks how far down the page is scrolled; different multiplier based on article length
+// This is the section we'll need to revisit
             // Scrolled within current section
             if (top >= this_top && top <= this_bottom) {
-                if ($('h1').hasClass("twoMinutes")){
-                    percent = ((top - this_top) / (height - wrapper_height)) * 500;
-                } else if ($('h1').hasClass("fourMinutes")){
-                    percent = ((top - this_top) / (height - wrapper_height)) * 150;
-                } else if ($('h1').hasClass("sixMinutes")){
-                    percent = ((top - this_top) / (height - wrapper_height)) * 150;
-                } else {
-                    percent = ((top - this_top) / (height - wrapper_height)) * 100;
-                }
-
+                percent = ((top - this_top) / (height - wrapper_height)) * 225;
                 console.log(percent);
                 if (percent >= 100) {
                     percent = 100;

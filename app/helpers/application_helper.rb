@@ -1,4 +1,5 @@
 module ApplicationHelper
+    # attr_reader :article_length
 
     def most_read?(article)
         numLikes = Like.all.count.to_f
@@ -10,13 +11,8 @@ module ApplicationHelper
         return most_read_class
     end
 
-    def guardian_length
-
-        sanitize(result['fields']['body'], :tags=>[]).length
-    end
-
-    def ext_length_class(article_length)
-        # article_length = sanitize(self['fields']['body'], :tags=>[]).length
+    def ext_length_class(result)
+        article_length = sanitize(result['fields']['body'], :tags=>[]).split(" ").length
         if article_length <= 400
             html_class = "twoMinutes"
         elsif article_length <= 800
