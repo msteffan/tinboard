@@ -33,6 +33,7 @@
             <%= link_to (image_tag ("headlineLogo.svg")), articles_path %>
             <h2>All the news that fits your time.</h2>
         </div>  <!-- headlineLogo -->
+        <!-- This "empty" h4 is for the flash notices; don't delete! -->
         <h4><%= flash[:notice] %></h4>
         <%= yield %>
     </div>

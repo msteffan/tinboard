@@ -1,7 +1,6 @@
 <!-- navBar -->
 <%= render "nav" %>
-<div class="two columns" id="mostRead">
-    <%= link_to "Most Read", { :class=>"hrefLink"} %>
+<div class="two columns hrefLink " id="mostRead">Most Read
 </div>
 </div>
 
@@ -20,7 +19,7 @@
             <% @guardian_article.results.each do |result| %>
                 <div class="one-half column externalArticle">
                     <h1 class="storyHeadline externalArticle <%= ext_length_class(result) %>" >
-                        <%= link_to truncate(result['fields']['headline'], :length => 50), "#{ result['webUrl']}", {:class => "hrefLink"}%>
+                        <%= link_to result['fields']['headline'], "#{ result['webUrl']}", {:class => "hrefLink"}%>
                     </h1>
                     <p class="no-overflow"><%= result['fields']['byline']%>, The Guardian</p>
                     <div class="hello">
@@ -36,7 +35,7 @@
         <% @articles.each do |article| %>
             <div class="one-third column">
                 <h1 class="storyHeadline <%= article.length_class %> <%= most_read?(article) %>" >
-                    <%= link_to truncate(article.title, :length => 35), article_path(article), {:class => "hrefLink"}%>
+                    <%= link_to article.title, article_path(article), {:class => "hrefLink"}%>
                 </h1>
 
                 <p><%= article.author %>, <%= article.publication %></p>
@@ -45,9 +44,6 @@
                 <div class="readMore hrefLink">
                     <%= link_to "Read More", article_path(article), {:class => "hrefLink" }%>
                 </div>
-                <%# link_to article_path(article), {:class => "hrefLink"} do %>
-                <!-- <button class='readMore'>Read More</button> -->
-                <%# end %>
             </div>
         <% end %>
     </div> <!-- End contentSection -->

@@ -12,7 +12,7 @@
     <div class="row contentSection">
         <% @user.likes.each do |like| %>
             <div>
-                <h1 class="storyHeadline <%= like.article.length_class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
+                <h1 class="profileHeadline <%= like.article.length_class %>"><%= link_to "#{like.article.title}", article_path(like.article), {:class => "hrefLink"} %></h1>
                 <div class="readMore"><%= link_to "Read More", article_path(like.article_id) %></div>
 
                 <div class="readMore"><%= link_to "Remove from List", like_path(like.id), :method => "delete" %></div>

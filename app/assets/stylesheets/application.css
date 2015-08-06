@@ -33,10 +33,16 @@
 
  .storyHeadline {
 
-     overflow: hidden;
+     overflow: scroll;
      font-size: 2.5em;
-     height: 90px;
+     height: 96px;
 
+ }
+
+ .profileHeadline {
+     font-size: 2.5em;
+     height: 55px;
+     padding-top: 30px;
  }
 
  .storyPreview.wide {
@@ -183,6 +189,7 @@
 
  /*************************content container elements**************************/
 .no-overflow {
+    height: 30px;
     overflow: scroll;
 }
 
