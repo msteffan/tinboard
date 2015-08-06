@@ -13,7 +13,8 @@
 
 <!-- navBar -->
 <div class="row" id="navBar">
-    <div class="two columns hrefLink" id="mostRead">Most Read
+    <div class="two columns" id="mostRead">
+        <%= link_to "See all", articles_path, { :class=>"hrefLink" } %>
     </div>
 </div>
 <!-- scroll-along tracker -->
@@ -30,7 +31,6 @@
 <div class="footer">
 FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jefferson
 </div>
-
 <script>
 (function($){
     $(function(){
@@ -57,10 +57,19 @@ FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jeffer
             var this_bottom = this_top + height;
             var percent = 0;
 
-// This is the section we'll need to revisit
+// tracks how far down the page is scrolled; different multiplier based on article length
             // Scrolled within current section
             if (top >= this_top && top <= this_bottom) {
-                percent = ((top - this_top) / (height - wrapper_height)) * 225;
+                if ($('h1').hasClass("twoMinutes")){
+                    percent = ((top - this_top) / (height - wrapper_height)) * 500;
+                } else if ($('h1').hasClass("fourMinutes")){
+                    percent = ((top - this_top) / (height - wrapper_height)) * 150;
+                } else if ($('h1').hasClass("sixMinutes")){
+                    percent = ((top - this_top) / (height - wrapper_height)) * 150;
+                } else {
+                    percent = ((top - this_top) / (height - wrapper_height)) * 100;
+                }
+
                 console.log(percent);
                 if (percent >= 100) {
                     percent = 100;
