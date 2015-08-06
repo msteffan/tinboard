@@ -9,7 +9,4 @@ module ApplicationHelper
         end
         return most_read_class
     end
-
-
-
 end
