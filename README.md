@@ -1,61 +1,16 @@
-# Tinboard
+# Timebox
 
-Tinboard is a news app for time-conscious readers. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
+Timebox is a news app for time-conscious readers. Upon logging into Tinboard, readers will be able to sort and select content by length and the time it takes to read a story. 
 
-# ERD
-![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/tinboard_erd.JPG)
+# Installation Instructions
+- Visit the site online: https://timebox-app.herokuapp.com/ 
+- Clone this repository to your local computer, run `bundle install`, and then `rails s ` in your CLI to access a version of the site.
 
-# DB & Models Structure
+# Technologies Used
+Timebox is a Ruby on Rails application that uses the bcrypt, <a href="https://github.com/jnunemaker/httparty">httparty</a>, and postgresql gems. Additionally, Timebox was built using the <a href="http://getskeleton.com/">Skeleton</a> CSS template, <a href="http://www.webdesigncrowd.com/scrolling-progress-bar/">Scrolling Progress Bar</a> from Web Design Crowd, and <a href="http://open-platform.theguardian.com/">The Guardian's content API</a>.
 
-class User 
+# Approach Taken 
 
-- has_many :articles, :through => :likes
+To build Timebox, I...
 
-- has_many :likes
-
-
-
-User attributes:
-
-- name
-
-- password
-
-////////////////////////////////////////////////    
-class Article 
-
-- has_many :likes
-
-
-
-Article attributes
-
-  - title
-
-  - author
-
-  - publication
-
-  - text
-
-////////////////////////////////////////////////    
-class Like 
-
-- belongs_to :user
-
-- belongs_to :article
-
-
-
-Like attributes
-
-- user_id
-
-- article_id
-  
-# Mockups
-Index of all articles (colored bars correspond to length of content):
-![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/index-view.png)
-
-Article show page: 
-![alt tag](https://raw.githubusercontent.com/msteffan/tinboard/master/planning%3Awireframes/article-show-page.png)
+#Unsolved Problems 
