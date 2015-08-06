@@ -5,9 +5,9 @@
 </div>
 </div>
 
-
+<!-- search bar -->
 <%= form_tag("/articles", method: "get") do %>
-  <%= label_tag(:query, "Search for:") %>
+  <%= label_tag(:query, "Find a topic:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
@@ -17,17 +17,21 @@
     <div class="row contentSection">
         <!-- playing with Guardian content below here -->
         <% if @guardian_article %>
-            <div class="one-half column">
-                <h1 class="storyHeadline <%= @guardian_article.length_class %>" >
-                    <%= truncate(@guardian_article.headline, :length => 400 )%>
-                </h1>
-                <p><%= @guardian_article.byline%>, The Guardian</p>
-                <p class="storyPreview">
-                    <%= truncate(sanitize(@guardian_article.body, :tags=>[]), :length => 400 )%>
-                </p>
-                <button class="readMore"><%= link_to "Read More", "#{ @guardian_article.web_url}", {:class => "hrefLink"}%>
-                </button>
-            </div>
+            <% @guardian_article.results.each do |result| %>
+                <div class="one-half column">
+                    <h1 class="storyHeadline
+                    <%# result.ext_length_class %>" >
+                        <%= link_to truncate(result['fields']['headline'], :length => 50), "#{ result['webUrl']}", {:class => "hrefLink"}%>
+                    </h1>
+                    <p><%= result['fields']['byline']%>, The Guardian</p>
+                    <p class="storyPreview">
+                        <%= truncate(sanitize(result['fields']['body'], :tags=>[]), :length => 400 )%>
+                    </p>
+
+                    <button class="readMore"><%= link_to "Read More", "#{ result['webUrl']}", {:class => "hrefLink"}%>
+                    </button>
+                </div>
+            <% end %>
         <% end %>
         <!-- seed data below here -->
         <% @articles.each do |article| %>
