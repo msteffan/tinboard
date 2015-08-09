@@ -18,9 +18,4 @@ class ArticlesController < ApplicationController
         @likes = @article.likes
     end
 
-    private
-    def article_params
-        params.require(:article).permit(:title, :author, :publication, :fulltext, :length)
-    end
-
 end
