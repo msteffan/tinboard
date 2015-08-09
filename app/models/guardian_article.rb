@@ -7,7 +7,6 @@ class GuardianArticle
 
     def initialize (query)
         @response = HTTParty.get('http://content.guardianapis.com/search?show-fields=body%2Cbyline%2Cheadline&q=' + query + '&api-key=test')
-        # ENV['API_KEY']
     end
 
     def results
