@@ -1,6 +1,7 @@
 module ApplicationHelper
     # attr_reader :article_length
 
+    # controls whether or not an article gets a most-read class
     def most_read?(article)
         numLikes = Like.all.count.to_f
         articleLikes = article.likes.count.to_f
@@ -11,6 +12,7 @@ module ApplicationHelper
         return most_read_class
     end
 
+    # manages length class assigned to Guardian articles
     def ext_length_class(result)
         article_length = sanitize(result['fields']['body'], :tags=>[]).split(" ").length
         if article_length <= 400

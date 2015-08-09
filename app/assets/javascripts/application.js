@@ -19,6 +19,7 @@
 
 $(document).ready(function(){
     var counter = 1;
+    // this function controls the clicks on the article navigation bar to sort content by time
     $(".columns").click(function(){
         var self = this
         $('h1').each(function(){
@@ -44,6 +45,7 @@ $(document).ready(function(){
         }); // closes h1.each function
      });// closes columns click function
 
+     // this function controls clicks on Guardian content (if it has been loaded after a search) and controls expanding/descreasing the size of the columns
      $(".guardianClick").click(function(){
          if (counter % 2 != 0) {
              var self = this;

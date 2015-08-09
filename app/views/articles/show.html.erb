@@ -1,4 +1,4 @@
-<!-- Progress Bar -->
+<!-- Progress Bar, don't delete -->
     <div class="progress">
       <div class="wrapper">
         <div class="bar">
@@ -25,7 +25,7 @@
         <% if @user.likes_article?(@article) %>
                 <div class="readMore belongsToUser">
                     <%= link_to "On your list", user_path(@user) %>
-                </div>    
+                </div>
         <% else %>
             <%= render "form"%>
         <% end %>
@@ -47,6 +47,7 @@
 FYI: A well informed electorate is a prerequisite for democracy. - Thomas Jefferson
 </div>
 
+<!-- This script controls the scroll along progress tracker on the article show page -->
 <script>
 (function($){
     $(function(){

@@ -14,20 +14,6 @@ class LikesController < ApplicationController
         redirect_to articles_path
     end
 
-#show
-    def show
-    end
-
-
-#edit
-    def edit
-    end
-
-#update
-    def update
-
-    end
-
 #destroy
     def destroy
         @user = User.find(session[:user]["id"])

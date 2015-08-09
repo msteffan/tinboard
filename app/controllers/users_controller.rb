@@ -3,11 +3,9 @@ class UsersController < ApplicationController
 
 ######## CRUD ROUTES  ########
     #index
+    # memo to self: Don't delete
     def index
     end
-
-    #new
-    #Create
 
     #show
     def show
