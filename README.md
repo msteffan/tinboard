@@ -11,7 +11,7 @@ Timebox is a Ruby on Rails application that uses the <a href="https://github.com
 
 # Approach Taken
 
-Timebox began as an idea at a hackathon early in July. The original idea, which we pitched as "a blend of Tinder and Flipboard," was called Tinboard, hence the name of this repository. A few weeks later, I decided that I liked the idea so much that I would start over, re-conceptualize it, and build it myself from scratch for this project.
+Timebox began as an idea at a hackathon early in July. The original idea, which we pitched as "a blend of Tinder and Flipboard," was called Tinboard. A few weeks later, I decided that I liked the idea so much that I would start over, re-conceptualize it, and build it myself from scratch for this project.
 
 Because this app is so content heavy, I wanted a bare-bones back-end structure that emphasizes what's really important: the content. I started by creating an ERD of three database models and displaying the relationship between them. Then, I created my rails application, my database, and my preliminary migrations. I focused the first day of work on setting up the models and routes to get them to interact correctly. The setup of the database and the models didn't change much over the course of the week, though if I were going to do it again, I might add additional columns to the user table to collect information about reading speed, topics of interest, and publications of interest. Going forward, I would also add date-time information about the articles and when a new "like" was created.
 
